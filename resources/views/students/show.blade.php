@@ -5,7 +5,7 @@
     <center>
         <h3>Student Details</h3>
 
-        <table style="border: 0px;">
+        <table style="border: 0px; margin-bottom: 20px">
             <tr>
                 <td>
                     <p><b class="lbl">ID :</b> {{ $student->id }} </p>

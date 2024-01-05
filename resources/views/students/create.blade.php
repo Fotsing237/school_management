@@ -3,13 +3,13 @@
 @section('content')
     <center>
 
-        <h3>Add Student</h3>
+        <h3><strong>New Student</strong></h3>
 
         <form action="{{route('students.store')}}" method="post" enctype="multipart/form-data">
 
             @csrf
 
-            <div class="form-group mb-4 col-md-8 text-md-start">
+            <div class="form-group mb-4 col-md-8 mt-4 text-md-start">
                 <label for="name">Name: </label>
                 <input type="text" name="name" class="form-control" required>
             </div>
@@ -29,12 +29,12 @@
                 <input type="text" name="section" class="form-control" required>
             </div>
 
-            <div class="form-group mb-4 col-md-8 text-md-start">
+            <div class="form-group mb-5 col-md-8 text-md-start">
                 <label for="image">Image: </label>
                 <input type="file" name="image" class="form-control" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Add Student</button>
+            <button type="submit" class="btn btn-primary btn-sm mb-5">Add Student</button>
 
         </form>
 

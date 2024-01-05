@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
       -->
   <script src="/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- END Bootstrap -->
   <link rel="stylesheet" href="/css/style.css">
   <meta charset="UTF-8">
@@ -43,7 +44,8 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="https://getbootstrap.com/">News</a>
+            <!-- <a class="nav-link active" aria-current="page" href="https://getbootstrap.com/">News</a> -->
+            <a class="nav-link" aria-current="page" href="#">News</a>
           </li>
 
           <li class="nav-item">
@@ -84,21 +86,20 @@
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success mt-3" type="submit">Search</button>
+          <button class="btn btn-outline-success btn-sm mt-3" type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
   <!-- End Navbar -->
 
-  <!-- Sidenav & Body & Sidbar  -->
+  <!-- Sidenav & Body & Sidebar  -->
   <div class="container" style="margin-top: 20px; margin-left:0px;">
     <div class="row">
 
       <!-- 4.1)  Sidenav avec 2 colonnes -->
-      <div class="col-2" style="margin-right:20px; margin-bottom:5px;">
+      <div class="col-2 mb-3" style="margin-right:20px; margin-bottom:5px;">
         <!-- Mettez ici le contenu de votre sidenav: des liens, des boutons de commandes...  -->
-
 
         <div class="sidebar">
           <header>Main Menu</header>
@@ -106,13 +107,17 @@
             <i class="fas fa-qrcode"></i>
             <span>Manage Students</span>
           </a>
-          <a href="#">
-            <i class="fas fa-link"></i>
-            <span>Shortcuts</span>
+          <a href="{{ url('/teachers')}}">
+            <i class="fas fa-qrcode"></i>
+            <span>Manage Teachers</span>
           </a>
           <a href="#">
-            <i class="fas fa-stream"></i>
-            <span>Overview</span>
+            <i class="fas fa-qrcode"></i>
+            <span>Manage Libraries</span>
+          </a>
+          <a href="#">
+            <i class="fas fa-qrcode"></i>
+            <span>Administrators</span>
           </a>
           <a href="#">
             <i class="fas fa-calendar"></i>
@@ -123,46 +128,38 @@
             <span>About</span>
           </a>
           <a href="#">
-            <i class="fas fa-sliders-h"></i>
-            <span>Services</span>
-          </a>
-          <a href="#">
             <i class="far fa-envelope"></i>
             <span>Contact</span>
           </a>
         </div>
-
 
       </div>
       <!-- End Sidenav-->
 
 
       <!-- BODY avec 9 colonnes-->
-      <div class="col-9">
-        <div class="card" style="width: 100%; margin-left:75px; margin-right:0px;">
+      <div class="col-9 mb-3">
+        <div class="card" style="width: 100%; margin-left:70px; margin-right:0px;">
           <div class="card-header bg-primary" style="color:white; font-size: 18px; font-weight:bold;" style="width: 100%;">
             School Management !
           </div>
           <div class="card-body">
 
             <div class="container">
+              
               @yield('content')
 
             </div>
-
-            <p class="card-text">
-
-            </p>
-            <a href="#" class="btn btn-primary">Read More !</a>
+            
+            <a href="#" class="btn btn-primary btn-sm">Read More !</a>
           </div>
         </div>
       </div>
       <!-- End Body-->
 
-
-
     </div>
   </div>
+  
   <footer class="bg-dark text-center text-white">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
@@ -183,7 +180,7 @@
             <div class="col-md-5 col-12">
               <!-- Email input -->
               <div class="form-outline form-white mb-4">
-                <input type="email" id="form5Example2" class="form-control" />
+                <input type="email" id="form5Example2" class="form-control mb-1" />
                 <label class="form-label" for="form5Example2">Email address</label>
               </div>
             </div>
@@ -192,7 +189,7 @@
             <!--Grid column-->
             <div class="col-auto">
               <!-- Submit button -->
-              <button type="submit" class="btn btn-outline-light mb-4">
+              <button type="submit" class="btn btn-outline-light btn-sm mt-2">
                 Subscribe
               </button>
             </div>
@@ -207,11 +204,14 @@
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      © 2020 Copyright: <strong>ZY ero</strong>
+      <!-- <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a> -->
     </div>
     <!-- Copyright -->
   </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </body>
 

@@ -368,7 +368,7 @@ table.blueTable tfoot .links a {
 
 td{
 
-    marging:5px;
+    margin:5px;
 }
 
 /* Styled table  */
@@ -442,6 +442,24 @@ h2{
     box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
 }
 
+.flex-container {
+    width: 80%;
+    margin-bottom: 20px;
+    margin-left: 70px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    align-items: center;
+    display: flex;
+    border: solid rgb(241, 188, 241);
+    border-radius: 25px;
+}
+
+.flex-container .col-8 {
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
 .fl-table {
     border-radius: 5px;
     font-size: 12px;
@@ -456,7 +474,7 @@ h2{
 
 .fl-table td, .fl-table th {
     text-align: center;
-    padding: 8px;
+    padding: 5px;
 }
 
 .fl-table td {
@@ -493,7 +511,7 @@ h2{
         content: "Scroll horizontally >";
         display: block;
         text-align: right;
-        font-size: 11px;
+        font-size: 10px;
         color: white;
         padding: 0 0 10px;
     }
@@ -561,8 +579,8 @@ h2{
 }
 .sidebar{
   position: relative;
-  width: 240px;
-  left: 20px;
+  width: 220px;
+  left: 10px;
   height: 100%;
   background: #1e1e1e;
   transition: all .5s ease;
@@ -577,12 +595,13 @@ h2{
   font-family: 'Montserrat', sans-serif;
 }
 .sidebar a{
+  text-decoration: none;
   display: block;
   height: 65px;
   width: 100%;
   color: white;
   line-height: 65px;
-  padding-left: 30px;
+  padding-left: 5px;
   box-sizing: border-box;
   border-bottom: 1px solid black;
   border-top: 1px solid rgba(255,255,255,.1);
@@ -590,16 +609,19 @@ h2{
   font-family: 'Open Sans', sans-serif;
   transition: all .5s ease;
 }
-a.active,a:hover{
+
+a.active,
+a:hover{
   border-left: 5px solid #b93632;
   color: #b93632;
 }
 .sidebar a i{
-  font-size: 23px;
-  margin-right: 16px;
+  font-size: 20px;
+  margin-right: 10px;
 }
 .sidebar a span{
   letter-spacing: 1px;
+  font-size: 15px;
   text-transform: uppercase;
 }
 #check{

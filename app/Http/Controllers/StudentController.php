@@ -17,7 +17,7 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::all();
-        return view('index', compact('students'));
+        return view('students/index', compact('students'));
     }
 
     // displays form or view to create a student
@@ -29,7 +29,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('createStudent');
+        return view('/students/create');
     }
 
     // stores student info to db (nb: create() submits form data to store())
@@ -71,7 +71,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return view('show', compact('student'));
+        return view('students/show', compact('student'));
     }
 
     // displays the form used to update student info with prefilled existing student data
@@ -84,7 +84,8 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Student::find($id);
+        return view('students/edit', compact('student'));
     }
 
     // used to make an update of student info in db (nb: edit() submit form data to update())
@@ -98,7 +99,14 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $students = Student::find($id);
+        $students->name = $request->input('name');
+        $students->email = $request->input('email');
+        $students->phone = $request->input('phone');
+        $students->section = $request->input('section');
+        $students->update();
+        
+        return redirect('/students')->with('success', 'data updated successfully');
     }
 
     // used to delete a student from bd
@@ -109,8 +117,23 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id){
+        $student = Student::find($id);
+        $student->delete();
+        return redirect('/students')->with('success', 'Student deleted successfully.');
     }
+
+    // used to delete all students from bd
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroyMany(array $ids){
+        Student::destroy($ids);
+        return redirect('/students')->with('success', 'Students deleted successfully.');
+    }
+
 }
